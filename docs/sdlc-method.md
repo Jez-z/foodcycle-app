@@ -1,46 +1,46 @@
-# SDLC Method: Agile/Scrum
+# Metode SDLC: Agile/Scrum
 
-## Introduction
+## Pendahuluan
 
-This project uses the Agile/Scrum methodology as the software development life cycle model. Agile/Scrum is suitable for this project because the application is developed iteratively and can be improved based on feedback.
+Proyek ini menggunakan metode Agile/Scrum sebagai model Software Development Life Cycle (SDLC). Metode ini dipilih karena proses pengembangan aplikasi dilakukan secara bertahap dan dapat disesuaikan berdasarkan evaluasi serta masukan selama proses pengerjaan.
 
-## Reason for Choosing Agile/Scrum
+## Alasan Memilih Agile/Scrum
 
-Agile/Scrum was chosen because FoodCycle App is developed step by step. The team can divide the work into several stages, review progress, and improve the application during development.
+Agile/Scrum dipilih karena FoodCycle App dikembangkan secara iteratif. Tim dapat membagi pekerjaan ke dalam beberapa tahap, meninjau progress, dan melakukan perbaikan apabila terdapat kebutuhan atau perubahan selama pengembangan.
 
-## Agile/Scrum Implementation
+## Implementasi Agile/Scrum pada Proyek
 
-### Sprint 1: Research and Problem Definition
+### Sprint 1: Riset dan Definisi Masalah
 
-The team identified the problem of food waste and selected surplus food distribution as the main focus of the project.
+Tim mengidentifikasi masalah pemborosan makanan dan memilih distribusi makanan surplus sebagai fokus utama proyek.
 
-### Sprint 2: Requirement Analysis
+### Sprint 2: Analisis Kebutuhan
 
-The team defined the main users, functional requirements, non-functional requirements, and MVP scope.
+Tim menentukan target pengguna, kebutuhan fungsional, kebutuhan non-fungsional, serta ruang lingkup MVP.
 
-### Sprint 3: Design
+### Sprint 3: Desain
 
-The team planned the application flow and interface design, including marketplace, product detail, order, checkout, and seller dashboard.
+Tim merancang alur aplikasi dan tampilan antarmuka, seperti marketplace, detail produk, pemesanan, checkout, dan dashboard penjual.
 
-### Sprint 4: Development
+### Sprint 4: Pengembangan
 
-The team started developing the application using React.js and Vite. The development focuses on the MVP features.
+Tim mulai mengembangkan aplikasi menggunakan React.js dan Vite. Pengembangan difokuskan pada fitur MVP.
 
 ### Sprint 5: Testing
 
-The team will test the application using unit testing, integration testing, system testing, and acceptance testing.
+Tim akan melakukan pengujian berupa unit testing, integration testing, system testing, dan acceptance testing untuk memastikan fitur utama berjalan sesuai kebutuhan.
 
-### Sprint 6: Evaluation and Finalization
+### Sprint 6: Evaluasi dan Finalisasi
 
-The team will evaluate the application based on testing results and prepare the final report and presentation.
+Tim akan mengevaluasi aplikasi berdasarkan hasil testing, lalu menyusun laporan akhir dan presentasi.
 
-## SDLC Phases in This Project
+## Fase SDLC dalam Proyek Ini
 
-| Phase | Activity |
+| Fase | Aktivitas |
 |---|---|
-| Planning | Define problem and project scope |
-| Analysis | Identify requirements and user stories |
-| Design | Create system flow and UI design |
-| Development | Build the MVP features |
-| Testing | Test the main features |
-| Deployment / Finalization | Prepare final result, report, and presentation |
+| Planning | Menentukan masalah dan ruang lingkup proyek |
+| Analysis | Mengidentifikasi kebutuhan dan user stories |
+| Design | Merancang alur sistem dan tampilan aplikasi |
+| Development | Mengembangkan fitur MVP |
+| Testing | Menguji fitur utama aplikasi |
+| Finalization | Menyusun hasil akhir, laporan, dan presentasi |
