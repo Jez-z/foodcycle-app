@@ -1,16 +1,69 @@
-# React + Vite
+# FoodCycle App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+FoodCycle App is a web-based application designed to help reduce food waste by connecting sellers who have surplus food with buyers who want to purchase food at a lower price.
 
-Currently, two official plugins are available:
+## Project Background
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Food waste is a common problem in daily life. Many edible foods from restaurants, food sellers, households, and campus environments are thrown away because there is no simple platform to distribute or sell them before they expire. This issue can create environmental, social, and economic impacts.
 
-## React Compiler
+## Problem Statement
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Many food sellers still throw away edible surplus food because they do not have an easy way to sell or distribute it quickly. At the same time, buyers may need affordable food options. Therefore, a digital platform is needed to help sellers offer surplus food and help buyers find available food at a lower price.
 
-## Expanding the ESLint configuration
+## Proposed Solution
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+FoodCycle App provides a simple marketplace platform where sellers can upload surplus food products and buyers can view, select, and order available products. The application aims to reduce food waste and support affordable food access.
+
+## Main Feature
+
+The main feature of FoodCycle App is a surplus food marketplace where sellers can upload food products and buyers can order them.
+
+## Minimum Viable Product
+
+The MVP features include:
+
+- Registration and login
+- Upload surplus food product
+- View product list
+- View product detail
+- Order product
+- Simple checkout
+- Seller dashboard
+
+## Future Development
+
+Some features will be developed in the future, such as:
+
+- Online payment integration
+- Detailed order tracking
+- Seller account verification
+- Admin report dashboard
+
+## SDLC Model Used
+
+This project uses the Agile/Scrum model because the application is developed step by step through several iterations. The team can improve the application based on feedback during the development process.
+
+## Tech Stack
+
+- Frontend: React.js
+- Build Tool: Vite
+- Version Control: GitHub
+- Project Management Tool: GitHub Projects
+
+## Current Project Status
+
+The project is currently in progress. The repository has been created, the initial React/Vite structure has been uploaded, and the team is preparing the main features and documentation.
+
+## How to Run the Project
+
+1. Clone this repository:
+   git clone https://github.com/Jez-z/foodcycle-app.git 
+
+2. Open the project folder:
+   cd foodcycle-app
+
+3. Install dependencies:
+   npm install
+
+4. Run the project:
+   npm run dev
