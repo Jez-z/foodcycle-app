@@ -1,42 +1,42 @@
-# Testing Report
+# Laporan Testing
 
-## Testing Objective
+## Tujuan Testing
 
-The objective of testing is to ensure that the FoodCycle App works according to the requirements and that the MVP features can be used properly.
+Tujuan testing adalah untuk memastikan FoodCycle App berjalan sesuai kebutuhan dan fitur MVP dapat digunakan dengan baik oleh pengguna.
 
 ## Unit Testing
 
-| Test Case | Expected Result | Actual Result | Status |
+| Test Case | Hasil yang Diharapkan | Hasil Aktual | Status |
 |---|---|---|---|
-| Login form validation | Empty input shows warning message | In progress | In Progress |
-| Product card display | Product data appears correctly | In progress | In Progress |
-| Add product form validation | Empty product input shows warning message | In progress | In Progress |
+| Validasi form login | Jika input kosong, sistem menampilkan pesan peringatan | Dalam proses | In Progress |
+| Tampilan kartu produk | Data produk tampil dengan benar | Dalam proses | In Progress |
+| Validasi form unggah produk | Jika input produk kosong, sistem menampilkan pesan peringatan | Dalam proses | In Progress |
 
 ## Integration Testing
 
-| Test Case | Expected Result | Actual Result | Status |
+| Test Case | Hasil yang Diharapkan | Hasil Aktual | Status |
 |---|---|---|---|
-| Product list connected to product detail | Selected product detail is displayed | In progress | In Progress |
-| Add product form connected to product list | New product appears in product list | In progress | In Progress |
-| Checkout connected to order summary | Selected product appears in checkout summary | In progress | In Progress |
+| Daftar produk terhubung dengan detail produk | Detail produk yang dipilih dapat ditampilkan | Dalam proses | In Progress |
+| Form unggah produk terhubung dengan daftar produk | Produk baru muncul pada daftar produk | Dalam proses | In Progress |
+| Checkout terhubung dengan ringkasan pesanan | Produk yang dipilih muncul pada ringkasan checkout | Dalam proses | In Progress |
 
 ## System Testing
 
-| Test Case | Expected Result | Actual Result | Status |
+| Test Case | Hasil yang Diharapkan | Hasil Aktual | Status |
 |---|---|---|---|
-| User opens the application | Home page is displayed | In progress | In Progress |
-| Buyer views available products | Product list page is displayed | In progress | In Progress |
-| Buyer orders a product | Order is created successfully | In progress | In Progress |
-| Seller opens dashboard | Seller product data is displayed | In progress | In Progress |
+| Pengguna membuka aplikasi | Halaman utama dapat ditampilkan | Dalam proses | In Progress |
+| Pembeli melihat produk yang tersedia | Halaman daftar produk dapat ditampilkan | Dalam proses | In Progress |
+| Pembeli memesan produk | Pesanan berhasil dibuat | Dalam proses | In Progress |
+| Penjual membuka dashboard | Data produk penjual dapat ditampilkan | Dalam proses | In Progress |
 
 ## Acceptance Testing
 
-| Test Case | Expected Result | Actual Result | Status |
+| Test Case | Hasil yang Diharapkan | Hasil Aktual | Status |
 |---|---|---|---|
-| User understands the app purpose | User understands that the app is for surplus food marketplace | In progress | In Progress |
-| Buyer can use the main marketplace flow | Buyer can view, select, and order food | In progress | In Progress |
-| Seller can upload product | Seller can add surplus food product | In progress | In Progress |
+| Pengguna memahami tujuan aplikasi | Pengguna memahami bahwa aplikasi digunakan untuk marketplace makanan surplus | Dalam proses | In Progress |
+| Pembeli dapat menggunakan alur marketplace | Pembeli dapat melihat, memilih, dan memesan makanan | Dalam proses | In Progress |
+| Penjual dapat mengunggah produk | Penjual dapat menambahkan produk makanan surplus | Dalam proses | In Progress |
 
-## Testing Status
+## Status Testing
 
-The testing process is still in progress because the MVP features are still being developed.
+Proses testing masih dalam tahap persiapan karena fitur MVP masih dalam tahap pengembangan.
