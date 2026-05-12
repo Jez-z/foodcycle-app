@@ -1,38 +1,40 @@
-# Project Progress
+# Progress Proyek
 
-## Week 1 - Problem Identification
+## Minggu 1 - Identifikasi Masalah
 
-The team discussed several real-world problems and selected food waste as the main issue. Food waste was chosen because it is a common problem that has environmental, social, and economic impacts.
+Tim mendiskusikan beberapa masalah nyata yang terjadi di lingkungan sekitar dan memilih masalah pemborosan makanan atau food waste sebagai fokus utama. Masalah ini dipilih karena masih banyak makanan layak konsumsi yang terbuang, padahal makanan tersebut masih dapat dimanfaatkan oleh orang lain.
 
-## Week 2 - Requirement Analysis
+## Minggu 2 - Analisis Kebutuhan
 
-The team identified the target users, including sellers and buyers. The team also defined the main features and MVP scope of the FoodCycle App.
+Tim mengidentifikasi target pengguna aplikasi, yaitu penjual dan pembeli. Penjual dapat mengunggah produk makanan surplus, sedangkan pembeli dapat melihat dan memesan produk makanan yang tersedia.
 
-## Week 3 - Design Planning
+## Minggu 3 - Perencanaan Desain
 
-The team planned the user flow and interface design. The main pages planned include login page, product list page, product detail page, checkout page, and seller dashboard.
+Tim menyusun user stories dan fitur Minimum Viable Product (MVP) melalui Notion. Fitur utama yang direncanakan meliputi registrasi dan login, unggah produk surplus, marketplace, detail produk, pemesanan, checkout sederhana, dan dashboard penjual.
 
-## Week 4 - Development Setup
+## Minggu 4 - Persiapan Pengembangan
 
-The team created the GitHub repository and uploaded the initial React/Vite project structure.
+Tim membuat repository GitHub dan mengunggah struktur awal proyek menggunakan React.js dan Vite.
 
-## Current Progress
+## Progress Saat Ini
 
-- GitHub repository has been created
-- Initial React/Vite project structure has been uploaded
-- README documentation has been updated
-- Requirements documentation has been created
-- SDLC documentation has been created
-- Testing documentation is being prepared
-- Main features are still in development
+- Repository GitHub telah dibuat
+- Struktur awal proyek React/Vite telah diunggah
+- Dokumentasi README telah diperbarui
+- Scope MVP telah ditentukan
+- User stories telah disusun di Notion
+- Fitur utama masih dalam tahap pengembangan
+- Dokumentasi tambahan seperti requirements, metode SDLC, dan testing report akan ditambahkan secara bertahap
 
-## Next Plan
+## Rencana Selanjutnya
 
-- Develop registration and login page
-- Develop product list page
-- Develop product detail page
-- Develop add product feature
-- Develop simple checkout feature
-- Develop seller dashboard
-- Conduct testing
-- Prepare final report and presentation
+- Membuat dokumentasi kebutuhan sistem
+- Membuat dokumentasi metode SDLC
+- Membuat dokumentasi testing
+- Mengembangkan halaman registrasi dan login
+- Mengembangkan halaman daftar produk
+- Mengembangkan halaman detail produk
+- Mengembangkan fitur unggah produk
+- Mengembangkan fitur checkout sederhana
+- Mengembangkan dashboard penjual
+- Menyusun laporan akhir dan presentasi
