@@ -1,47 +1,49 @@
 # FoodCycle App
 
-FoodCycle App is a web-based application designed to help reduce food waste by connecting sellers who have surplus food with buyers who want to purchase food at a lower price.
+FoodCycle App adalah aplikasi berbasis web yang dirancang untuk membantu mengurangi pemborosan makanan dengan menghubungkan penjual yang memiliki makanan surplus dengan pembeli yang ingin membeli makanan dengan harga lebih terjangkau.
 
-## Project Background
+## Latar Belakang Proyek
 
-Food waste is a common problem in daily life. Many edible foods from restaurants, food sellers, households, and campus environments are thrown away because there is no simple platform to distribute or sell them before they expire. This issue can create environmental, social, and economic impacts.
+Pemborosan makanan atau food waste masih menjadi masalah yang sering terjadi dalam kehidupan sehari-hari. Banyak makanan layak konsumsi dari restoran, penjual makanan, rumah tangga, maupun lingkungan kampus yang terbuang karena tidak ada platform sederhana untuk menjual atau mendistribusikannya sebelum makanan tersebut tidak layak konsumsi.
 
-## Problem Statement
+Masalah ini dapat menimbulkan dampak lingkungan, sosial, dan ekonomi. Oleh karena itu, dibutuhkan sebuah solusi digital yang dapat membantu mengurangi makanan terbuang dan mempermudah distribusi makanan surplus.
 
-Many food sellers still throw away edible surplus food because they do not have an easy way to sell or distribute it quickly. At the same time, buyers may need affordable food options. Therefore, a digital platform is needed to help sellers offer surplus food and help buyers find available food at a lower price.
+## Rumusan Masalah
 
-## Proposed Solution
+Banyak penjual makanan masih membuang makanan surplus yang sebenarnya masih layak konsumsi karena tidak memiliki cara yang mudah untuk menjual atau mendistribusikannya secara cepat. Di sisi lain, pembeli membutuhkan pilihan makanan yang lebih terjangkau. Oleh karena itu, dibutuhkan platform digital yang dapat mempertemukan penjual makanan surplus dengan pembeli.
 
-FoodCycle App provides a simple marketplace platform where sellers can upload surplus food products and buyers can view, select, and order available products. The application aims to reduce food waste and support affordable food access.
+## Solusi yang Diusulkan
 
-## Main Feature
+FoodCycle App menyediakan platform marketplace sederhana di mana penjual dapat mengunggah produk makanan surplus, sedangkan pembeli dapat melihat, memilih, dan memesan produk yang tersedia. Aplikasi ini bertujuan untuk mengurangi pemborosan makanan dan mendukung akses makanan yang lebih terjangkau.
 
-The main feature of FoodCycle App is a surplus food marketplace where sellers can upload food products and buyers can order them.
+## Fitur Utama
 
-## Minimum Viable Product
+Fitur utama FoodCycle App adalah marketplace makanan surplus, di mana penjual dapat mengunggah produk makanan dan pembeli dapat melakukan pemesanan.
 
-The MVP features include:
+## Minimum Viable Product (MVP)
 
-- Registration and login
-- Upload surplus food product
-- View product list
-- View product detail
-- Order product
-- Simple checkout
-- Seller dashboard
+Fitur MVP yang akan dikembangkan meliputi:
 
-## Future Development
+- Registrasi dan login
+- Unggah produk makanan surplus
+- Melihat daftar produk
+- Melihat detail produk
+- Pemesanan produk
+- Checkout sederhana
+- Dashboard penjual
 
-Some features will be developed in the future, such as:
+## Pengembangan Selanjutnya
 
-- Online payment integration
-- Detailed order tracking
-- Seller account verification
-- Admin report dashboard
+Beberapa fitur yang direncanakan untuk pengembangan selanjutnya adalah:
 
-## SDLC Model Used
+- Integrasi pembayaran online
+- Tracking pesanan secara detail
+- Verifikasi akun penjual
+- Dashboard laporan admin
 
-This project uses the Agile/Scrum model because the application is developed step by step through several iterations. The team can improve the application based on feedback during the development process.
+## Metode SDLC yang Digunakan
+
+Proyek ini menggunakan metode Agile/Scrum karena aplikasi dikembangkan secara bertahap melalui beberapa iterasi. Dengan metode ini, tim dapat melakukan evaluasi dan perbaikan berdasarkan progress serta masukan selama proses pengembangan.
 
 ## Tech Stack
 
@@ -50,20 +52,24 @@ This project uses the Agile/Scrum model because the application is developed ste
 - Version Control: GitHub
 - Project Management Tool: GitHub Projects
 
-## Current Project Status
+## Status Proyek Saat Ini
 
-The project is currently in progress. The repository has been created, the initial React/Vite structure has been uploaded, and the team is preparing the main features and documentation.
+Proyek ini masih dalam tahap pengembangan. Repository GitHub telah dibuat, struktur awal React/Vite telah diunggah, dan tim sedang menyiapkan fitur utama serta dokumentasi proyek.
 
-## How to Run the Project
+## Cara Menjalankan Proyek
 
-1. Clone this repository:
-   git clone https://github.com/Jez-z/foodcycle-app.git 
+1. Clone repository ini:
+   git clone https://github.com/Jez-z/foodcycle-app.git
 
-2. Open the project folder:
+2. Buka folder proyek:
    cd foodcycle-app
 
 3. Install dependencies:
    npm install
 
-4. Run the project:
+4. Jalankan proyek:
    npm run dev
+
+## Hasil yang Diharapkan
+
+Hasil yang diharapkan dari proyek ini adalah aplikasi web yang memungkinkan penjual mengunggah produk makanan surplus dan pembeli melihat serta memesan makanan yang tersedia.
