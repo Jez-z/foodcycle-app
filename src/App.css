@@ -118,6 +118,20 @@ a {
   background: #24583d;
 }
 
+.delete-button {
+  background: #c62828;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.delete-button:hover {
+  background: #8e1b1b;
+}
+
 .detail-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
