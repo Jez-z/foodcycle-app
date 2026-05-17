@@ -1,8 +1,8 @@
-function SellerDashboard({ products }) {
+function SellerDashboard({ products, deleteProduct }) {
   return (
     <div className="page">
       <h1>Dashboard Penjual</h1>
-      <p>Halaman ini digunakan penjual untuk memantau produk yang tersedia.</p>
+      <p>Halaman ini digunakan penjual untuk memantau dan mengelola produk yang tersedia.</p>
 
       <div className="table-wrapper">
         <table>
@@ -13,6 +13,7 @@ function SellerDashboard({ products }) {
               <th>Stok</th>
               <th>Lokasi</th>
               <th>Status</th>
+              <th>Aksi</th>
             </tr>
           </thead>
 
@@ -24,6 +25,14 @@ function SellerDashboard({ products }) {
                 <td>{product.quantity}</td>
                 <td>{product.location}</td>
                 <td>{product.status}</td>
+                <td>
+                  <button
+                    className="delete-button"
+                    onClick={() => deleteProduct(product.id)}
+                  >
+                    Hapus
+                  </button>
+                </td>
               </tr>
             ))}
           </tbody>
