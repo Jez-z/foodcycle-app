@@ -18,6 +18,10 @@ function App() {
     setProducts([newProduct, ...products]);
   };
 
+  const deleteProduct = (id) => {
+  setProducts(products.filter((product) => product.id !== id));
+  };
+
   return (
     <BrowserRouter>
       <Navbar />
@@ -36,7 +40,8 @@ function App() {
         <Route path="/checkout/:id" element={<Checkout products={products} />} />
         <Route
           path="/seller-dashboard"
-          element={<SellerDashboard products={products} />}
+          element={<SellerDashboard products={products} deleteProduct={deleteProduct} />
+          }
         />
       </Routes>
     </BrowserRouter>
