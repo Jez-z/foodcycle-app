@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 
@@ -12,7 +12,14 @@ import Checkout from "./pages/Checkout";
 import SellerDashboard from "./pages/SellerDashboard";
 
 function App() {
-  const [products, setProducts] = useState(initialProducts);
+  const [products, setProducts] = useState(() => {
+    const savedProducts = localStorage.getItem("foodcycle-products");
+    return savedProducts ? JSON.parse(savedProducts) : initialProducts;
+  });
+
+  useEffect(() => {
+    localStorage.setItem("foodcycle-products", JSON.stringify(products));
+  }, [products]);
 
   const addProduct = (newProduct) => {
     setProducts([newProduct, ...products]);
