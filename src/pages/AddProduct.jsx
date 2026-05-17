@@ -28,9 +28,25 @@ function AddProduct({ addProduct }) {
       !form.seller ||
       !form.price ||
       !form.quantity ||
-      !form.location
+      !form.location ||
+      !form.expiredTime 
     ) {
       alert("Mohon lengkapi data produk utama.");
+      return;
+    }
+
+    if (Number(form.price) <= 0) {
+      alert("Harga diskon harus lebih dari 0.");
+      return;
+    }
+
+    if (form.originalPrice && Number(form.originalPrice) < Number(form.price)) {
+      alert("Harga normal tidak boleh lebih kecil dari harga diskon.");
+      return;
+    }
+
+    if (Number(form.quantity) <= 0) {
+      alert("Stok produk harus lebih dari 0.");
       return;
     }
 
@@ -43,6 +59,9 @@ function AddProduct({ addProduct }) {
       image:
         form.image ||
         "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800",
+      description:
+        form.description ||
+        "Makanan surplus yang masih layak konsumsi dan tersedia dengan harga lebih terjangkau.",
       status: "Tersedia",
     };
 
