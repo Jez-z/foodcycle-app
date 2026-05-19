@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { supabase } from "../lib/supabase";
+import { supabase } from "../supabaseClient";
 
 function Register() {
   const navigate = useNavigate();
@@ -14,6 +14,17 @@ function Register() {
   const handleRegister = async (e) => {
     e.preventDefault();
     setMessage("");
+
+    if (!name || !email || !password) {
+      setMessage("Semua data wajib diisi.");
+      return;
+    }
+
+    if (password.length < 6) {
+      setMessage("Password minimal 6 karakter.");
+      return;
+    }
+
     setLoading(true);
 
     const { error } = await supabase.auth.signUp({
@@ -34,6 +45,11 @@ function Register() {
     }
 
     setMessage("Register berhasil! Silakan login.");
+
+    setName("");
+    setEmail("");
+    setPassword("");
+
     setTimeout(() => {
       navigate("/login");
     }, 1000);
