@@ -22,9 +22,18 @@ function Checkout({ products }) {
     );
   }
 
+  const price = Number(product.price || 0);
+  const stock = Number(product.quantity || 0);
   const serviceFee = 1000;
-  const subtotal = product.price * Number(quantity || 1);
+  const subtotal = price * Number(quantity || 1);
   const total = subtotal + serviceFee;
+
+  const imageUrl =
+    product.image ||
+    product.image_url ||
+    "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800";
+
+  const expiredTime = product.expired_time || product.expiredTime || "-";
 
   const handleCheckout = async () => {
     if (!buyerName) {
@@ -37,7 +46,7 @@ function Checkout({ products }) {
       return;
     }
 
-    if (Number(quantity) > product.quantity) {
+    if (Number(quantity) > stock) {
       alert("Jumlah pesanan melebihi stok.");
       return;
     }
@@ -55,6 +64,22 @@ function Checkout({ products }) {
     if (error) {
       console.log("ERROR CHECKOUT:", error);
       alert("Gagal membuat pesanan.");
+      return;
+    }
+
+    const newStock = stock - Number(quantity);
+
+    const { error: stockError } = await supabase
+      .from("products")
+      .update({
+        quantity: newStock,
+        status: newStock === 0 ? "Habis" : product.status,
+      })
+      .eq("id", product.id);
+
+    if (stockError) {
+      console.log("ERROR UPDATE STOK:", stockError);
+      alert("Pesanan masuk, tapi stok gagal diperbarui.");
       return;
     }
 
@@ -83,7 +108,7 @@ function Checkout({ products }) {
         <div className="checkout-card product-summary">
           <img
             className="checkout-image"
-            src={product.image}
+            src={imageUrl}
             alt={product.name}
           />
 
@@ -105,12 +130,12 @@ function Checkout({ products }) {
 
               <div>
                 <span>Stok</span>
-                <strong>{product.quantity}</strong>
+                <strong>{stock}</strong>
               </div>
 
               <div>
-                <span>Kedaluwarsa</span>
-                <strong>{product.expired_time || product.expiredTime}</strong>
+                <span>Batas konsumsi</span>
+                <strong>{expiredTime}</strong>
               </div>
             </div>
           </div>
@@ -131,7 +156,7 @@ function Checkout({ products }) {
           <input
             type="number"
             min="1"
-            max={product.quantity}
+            max={stock}
             value={quantity}
             onChange={(e) => setQuantity(e.target.value)}
           />
@@ -139,7 +164,7 @@ function Checkout({ products }) {
           <div className="price-detail">
             <div>
               <span>Harga satuan</span>
-              <strong>Rp{product.price.toLocaleString("id-ID")}</strong>
+              <strong>Rp{price.toLocaleString("id-ID")}</strong>
             </div>
 
             <div>
@@ -163,7 +188,7 @@ function Checkout({ products }) {
           </button>
 
           <p className="checkout-note">
-            Pesanan akan masuk ke dashboard database dengan status pending.
+            Pesanan akan masuk ke tabel orders dan stok produk otomatis berkurang.
           </p>
         </div>
       </div>
