@@ -1,6 +1,57 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { supabase } from "../supabaseClient";
 
 function Home() {
+  const [stats, setStats] = useState({
+    totalProducts: 0,
+    totalSellers: 0,
+    totalStock: 0,
+    totalTransactions: 0,
+  });
+
+  const fetchStats = async () => {
+    const { data: products, error: productError } = await supabase
+      .from("products")
+      .select("*");
+
+    if (productError) {
+      console.log("ERROR FETCH PRODUCTS STATS:", productError);
+      return;
+    }
+
+    const { data: orders, error: orderError } = await supabase
+      .from("orders")
+      .select("*");
+
+    if (orderError) {
+      console.log("ERROR FETCH ORDERS STATS:", orderError);
+      return;
+    }
+
+    const totalProducts = products.length;
+
+    const totalStock = products.reduce((total, product) => {
+      return total + Number(product.quantity || 0);
+    }, 0);
+
+    const uniqueSellers = new Set(products.map((product) => product.seller));
+    const totalSellers = uniqueSellers.size;
+
+    const totalTransactions = orders.length;
+
+    setStats({
+      totalProducts,
+      totalSellers,
+      totalStock,
+      totalTransactions,
+    });
+  };
+
+  useEffect(() => {
+    fetchStats();
+  }, []);
+
   return (
     <main className="home-page">
       <section className="home-hero-dashboard">
@@ -35,40 +86,40 @@ function Home() {
             <div className="stat-icon">🛍️</div>
             <div>
               <p>Total Produk</p>
-              <h2>128</h2>
+              <h2>{stats.totalProducts}</h2>
               <span>Produk tersedia</span>
             </div>
-            <small>↑ 12%</small>
+            <small>Live</small>
           </div>
 
           <div className="stat-card stat-blue">
             <div className="stat-icon">👥</div>
             <div>
               <p>Total Penjual</p>
-              <h2>54</h2>
+              <h2>{stats.totalSellers}</h2>
               <span>Penjual aktif</span>
             </div>
-            <small>↑ 8%</small>
+            <small>Live</small>
           </div>
 
           <div className="stat-card stat-yellow">
             <div className="stat-icon">📦</div>
             <div>
               <p>Total Stok Tersedia</p>
-              <h2>230 kg</h2>
+              <h2>{stats.totalStock}</h2>
               <span>Makanan layak konsumsi</span>
             </div>
-            <small>↑ 15%</small>
+            <small>Live</small>
           </div>
 
           <div className="stat-card stat-purple">
             <div className="stat-icon">🛒</div>
             <div>
               <p>Total Transaksi</p>
-              <h2>312</h2>
+              <h2>{stats.totalTransactions}</h2>
               <span>Transaksi berhasil</span>
             </div>
-            <small>↑ 20%</small>
+            <small>Live</small>
           </div>
         </div>
       </section>
