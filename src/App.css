@@ -303,3 +303,9 @@ th {
   margin-top: 14px;
   font-weight: bold;
 }
+
+.old-price {
+  text-decoration: line-through;
+  color: #888;
+  font-size: 14px;
+}
