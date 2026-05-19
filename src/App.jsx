@@ -3,6 +3,8 @@ import { supabase } from "./supabaseClient";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import OrderList from "./pages/OrderList";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
@@ -59,6 +61,8 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
 
         <Route
           path="/products"
