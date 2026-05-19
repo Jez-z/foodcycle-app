@@ -10,6 +10,8 @@ function Navbar() {
         <Link to="/products">Produk</Link>
         <Link to="/add-product">Tambah Produk</Link>
         <Link to="/seller-dashboard">Dashboard Penjual</Link>
+        <Link to="/login">Login</Link>
+        <Link to="/register">Register</Link>
       </div>
     </nav>
   );

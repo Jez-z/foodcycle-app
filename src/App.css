@@ -243,3 +243,63 @@ th {
     grid-template-columns: 1fr;
   }
 }
+
+.auth-page {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f5f7f2;
+  padding: 40px 20px;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+  background: white;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.auth-card h1 {
+  color: #2f6f46;
+  margin-bottom: 8px;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.auth-form label {
+  font-weight: 600;
+}
+
+.auth-form input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.auth-form button {
+  margin-top: 12px;
+  padding: 12px;
+  background: #2f6f46;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.auth-link {
+  margin-top: 18px;
+  text-align: center;
+}
+
+.auth-message {
+  margin-top: 14px;
+  font-weight: bold;
+}
