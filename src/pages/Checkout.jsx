@@ -12,14 +12,19 @@ function Checkout({ products }) {
   if (!product) {
     return (
       <div className="page">
-        <h2>Produk tidak ditemukan</h2>
-        <Link to="/products">Kembali ke daftar produk</Link>
+        <div className="empty-state">
+          <h2>Produk tidak ditemukan</h2>
+          <Link className="button" to="/products">
+            Kembali ke daftar produk
+          </Link>
+        </div>
       </div>
     );
   }
 
   const serviceFee = 1000;
-  const total = product.price * Number(quantity) + serviceFee;
+  const subtotal = product.price * Number(quantity || 1);
+  const total = subtotal + serviceFee;
 
   const handleCheckout = async () => {
     if (!buyerName) {
@@ -59,60 +64,108 @@ function Checkout({ products }) {
   };
 
   return (
-    <div className="page checkout-box">
-      <h1>Checkout</h1>
+    <div className="page checkout-page">
+      <div className="checkout-header">
+        <div>
+          <p className="section-label">FoodCycle Checkout</p>
+          <h1>Konfirmasi Pesanan</h1>
+          <p>
+            Cek lagi detail makanan surplus sebelum pesanan kamu dikonfirmasi.
+          </p>
+        </div>
 
-      <div className="summary-card">
-        <h2>Ringkasan Pesanan</h2>
+        <Link className="secondary-button" to="/products">
+          Kembali
+        </Link>
+      </div>
 
-        <p>
-          <strong>Produk:</strong> {product.name}
-        </p>
+      <div className="checkout-layout">
+        <div className="checkout-card product-summary">
+          <img
+            className="checkout-image"
+            src={product.image}
+            alt={product.name}
+          />
 
-        <p>
-          <strong>Penjual:</strong> {product.seller}
-        </p>
+          <div className="checkout-product-info">
+            <span className="status-badge">{product.status}</span>
+            <h2>{product.name}</h2>
+            <p>{product.description}</p>
 
-        <p>
-          <strong>Lokasi:</strong> {product.location}
-        </p>
+            <div className="info-grid">
+              <div>
+                <span>Penjual</span>
+                <strong>{product.seller}</strong>
+              </div>
 
-        <p>
-          <strong>Harga:</strong> Rp{product.price.toLocaleString("id-ID")}
-        </p>
+              <div>
+                <span>Lokasi</span>
+                <strong>{product.location}</strong>
+              </div>
 
-        <p>
-          <strong>Stok tersedia:</strong> {product.quantity}
-        </p>
+              <div>
+                <span>Stok</span>
+                <strong>{product.quantity}</strong>
+              </div>
 
-        <input
-          type="text"
-          placeholder="Nama pembeli"
-          value={buyerName}
-          onChange={(e) => setBuyerName(e.target.value)}
-        />
+              <div>
+                <span>Kedaluwarsa</span>
+                <strong>{product.expired_time || product.expiredTime}</strong>
+              </div>
+            </div>
+          </div>
+        </div>
 
-        <input
-          type="number"
-          min="1"
-          max={product.quantity}
-          placeholder="Jumlah pesanan"
-          value={quantity}
-          onChange={(e) => setQuantity(e.target.value)}
-        />
+        <div className="checkout-card order-summary">
+          <h2>Data Pesanan</h2>
 
-        <p>
-          <strong>Biaya Layanan:</strong> Rp
-          {serviceFee.toLocaleString("id-ID")}
-        </p>
+          <label>Nama Pembeli</label>
+          <input
+            type="text"
+            placeholder="Contoh: Amanda"
+            value={buyerName}
+            onChange={(e) => setBuyerName(e.target.value)}
+          />
 
-        <hr />
+          <label>Jumlah Pesanan</label>
+          <input
+            type="number"
+            min="1"
+            max={product.quantity}
+            value={quantity}
+            onChange={(e) => setQuantity(e.target.value)}
+          />
 
-        <h2>Total: Rp{total.toLocaleString("id-ID")}</h2>
+          <div className="price-detail">
+            <div>
+              <span>Harga satuan</span>
+              <strong>Rp{product.price.toLocaleString("id-ID")}</strong>
+            </div>
 
-        <button className="button" onClick={handleCheckout}>
-          Konfirmasi Pesanan
-        </button>
+            <div>
+              <span>Subtotal</span>
+              <strong>Rp{subtotal.toLocaleString("id-ID")}</strong>
+            </div>
+
+            <div>
+              <span>Biaya layanan</span>
+              <strong>Rp{serviceFee.toLocaleString("id-ID")}</strong>
+            </div>
+
+            <div className="total-row">
+              <span>Total</span>
+              <strong>Rp{total.toLocaleString("id-ID")}</strong>
+            </div>
+          </div>
+
+          <button className="button checkout-button" onClick={handleCheckout}>
+            Konfirmasi Pesanan
+          </button>
+
+          <p className="checkout-note">
+            Pesanan akan masuk ke dashboard database dengan status pending.
+          </p>
+        </div>
       </div>
     </div>
   );
