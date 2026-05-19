@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { supabase } from "../supabaseClient";
 
 function AddProduct({ addProduct }) {
   const [form, setForm] = useState({
@@ -20,7 +21,7 @@ function AddProduct({ addProduct }) {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (
@@ -51,21 +52,32 @@ function AddProduct({ addProduct }) {
     }
 
     const newProduct = {
-      id: Date.now(),
-      ...form,
+      name: form.name,
+      seller: form.seller,
       price: Number(form.price),
-      originalPrice: Number(form.originalPrice || form.price),
+      original_price: Number(form.originalPrice || form.price),
       quantity: Number(form.quantity),
-      image:
+      location: form.location,
+      expired_time: form.expiredTime,
+      description: form.description,
+      image_url:
         form.image ||
         "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800",
-      description:
-        form.description ||
-        "Makanan surplus yang masih layak konsumsi dan tersedia dengan harga lebih terjangkau.",
       status: "Tersedia",
     };
 
-    addProduct(newProduct);
+    const { data, error } = await supabase
+      .from("products")
+      .insert([newProduct])
+      .select();
+
+    if (error) {
+      console.log("ERROR TAMBAH PRODUK:", error);
+      alert("Gagal tambah produk ke Supabase.");
+      return;
+    }
+
+    addProduct(data[0]);
 
     alert("Produk berhasil ditambahkan!");
 
