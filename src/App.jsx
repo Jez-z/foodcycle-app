@@ -10,6 +10,7 @@ import ProductDetail from "./pages/ProductDetail";
 import AddProduct from "./pages/AddProduct";
 import Checkout from "./pages/Checkout";
 import SellerDashboard from "./pages/SellerDashboard";
+import EditProduct from "./pages/EditProduct";
 
 function App() {
   const [products, setProducts] = useState(() => {
@@ -43,6 +44,10 @@ function App() {
         <Route
           path="/add-product"
           element={<AddProduct addProduct={addProduct} />}
+        />
+        <Route
+          path="/edit-product/:id"
+          element={<EditProduct />}
         />
         <Route path="/checkout/:id" element={<Checkout products={products} />} />
         <Route
