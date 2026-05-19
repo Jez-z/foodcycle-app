@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { supabase } from "./supabaseClient";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
-import OrderList from "./pages/OrderList";
+import OrderList from "./pages/Orderlist";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 
