@@ -2,19 +2,272 @@ import { Link } from "react-router-dom";
 
 function Home() {
   return (
-    <div className="hero">
-      <div>
-        <h1>Kurangi Food Waste dengan FoodCycle</h1>
-        <p>
-          FoodCycle membantu penjual menawarkan makanan surplus yang masih layak
-          konsumsi kepada pembeli dengan harga lebih terjangkau.
-        </p>
+    <main className="home-page">
+      <section className="home-hero-dashboard">
+        <div className="home-left">
+          <span className="welcome-badge">🌿 Selamat datang di FoodCycle</span>
 
-        <Link className="button" to="/products">
-          Lihat Produk
-        </Link>
-      </div>
-    </div>
+          <h1>
+            Kurangi Food Waste dengan <span>FoodCycle</span>
+          </h1>
+
+          <p>
+            FoodCycle membantu penjual menawarkan makanan surplus yang masih
+            layak konsumsi kepada pembeli dengan harga lebih terjangkau.
+          </p>
+
+          <div className="home-actions">
+            <Link className="button" to="/products">
+              🛍️ Lihat Produk
+            </Link>
+          </div>
+        </div>
+
+        <div className="home-center">
+          <div className="bag-illustration">
+            <div className="bag-food">🥬 🍊 🥕</div>
+            <div className="recycle-icon">♻</div>
+          </div>
+        </div>
+
+        <div className="home-stats">
+          <div className="stat-card stat-green">
+            <div className="stat-icon">🛍️</div>
+            <div>
+              <p>Total Produk</p>
+              <h2>128</h2>
+              <span>Produk tersedia</span>
+            </div>
+            <small>↑ 12%</small>
+          </div>
+
+          <div className="stat-card stat-blue">
+            <div className="stat-icon">👥</div>
+            <div>
+              <p>Total Penjual</p>
+              <h2>54</h2>
+              <span>Penjual aktif</span>
+            </div>
+            <small>↑ 8%</small>
+          </div>
+
+          <div className="stat-card stat-yellow">
+            <div className="stat-icon">📦</div>
+            <div>
+              <p>Total Stok Tersedia</p>
+              <h2>230 kg</h2>
+              <span>Makanan layak konsumsi</span>
+            </div>
+            <small>↑ 15%</small>
+          </div>
+
+          <div className="stat-card stat-purple">
+            <div className="stat-icon">🛒</div>
+            <div>
+              <p>Total Transaksi</p>
+              <h2>312</h2>
+              <span>Transaksi berhasil</span>
+            </div>
+            <small>↑ 20%</small>
+          </div>
+        </div>
+      </section>
+
+      <section className="dashboard-section">
+        <div className="dashboard-card">
+          <div className="card-title-row">
+            <h2>Kategori Populer</h2>
+            <Link to="/products">Lihat Semua</Link>
+          </div>
+
+          <div className="category-list">
+            <div className="category-item">
+              <div className="circle-icon green-soft">🍱</div>
+              <div>
+                <h3>Makanan Siap Saji</h3>
+                <p>45 Produk</p>
+              </div>
+            </div>
+
+            <div className="category-item">
+              <div className="circle-icon yellow-soft">🥐</div>
+              <div>
+                <h3>Roti & Bakery</h3>
+                <p>28 Produk</p>
+              </div>
+            </div>
+
+            <div className="category-item">
+              <div className="circle-icon orange-soft">🍊</div>
+              <div>
+                <h3>Buah & Sayur</h3>
+                <p>32 Produk</p>
+              </div>
+            </div>
+
+            <div className="category-item">
+              <div className="circle-icon purple-soft">🥤</div>
+              <div>
+                <h3>Minuman</h3>
+                <p>23 Produk</p>
+              </div>
+            </div>
+
+            <div className="category-item">
+              <div className="circle-icon blue-soft">❄️</div>
+              <div>
+                <h3>Frozen Food</h3>
+                <p>18 Produk</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="dashboard-card">
+          <div className="card-title-row">
+            <h2>Produk Terbaru</h2>
+            <Link to="/products">Lihat Semua</Link>
+          </div>
+
+          <div className="latest-products">
+            <div className="mini-product">
+              <div className="mini-img img-1"></div>
+              <h3>Nasi Ayam Teriyaki</h3>
+              <p>Dapur Sehat</p>
+              <strong>Rp18.000</strong>
+              <span>Tersedia</span>
+            </div>
+
+            <div className="mini-product">
+              <div className="mini-img img-2"></div>
+              <h3>Roti Gandum</h3>
+              <p>Bakery Happy</p>
+              <strong>Rp12.000</strong>
+              <span>Tersedia</span>
+            </div>
+
+            <div className="mini-product">
+              <div className="mini-img img-3"></div>
+              <h3>Salad Buah Segar</h3>
+              <p>Fresh Bowl</p>
+              <strong>Rp15.000</strong>
+              <span>Tersedia</span>
+            </div>
+
+            <div className="mini-product">
+              <div className="mini-img img-4"></div>
+              <h3>Jus Jeruk Murni</h3>
+              <p>Healthy Drink</p>
+              <strong>Rp10.000</strong>
+              <span>Tersedia</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="dashboard-card">
+          <div className="card-title-row">
+            <h2>Aktivitas Terbaru</h2>
+            <Link to="/orders">Lihat Semua</Link>
+          </div>
+
+          <div className="activity-list">
+            <div className="activity-item">
+              <div className="circle-icon green-soft">＋</div>
+              <div>
+                <h3>Dapur Sehat menambahkan produk baru</h3>
+                <p>Nasi Ayam Teriyaki</p>
+              </div>
+              <span>2 menit yang lalu</span>
+            </div>
+
+            <div className="activity-item">
+              <div className="circle-icon blue-soft">✎</div>
+              <div>
+                <h3>Bakery Happy memperbarui stok produk</h3>
+                <p>Roti Gandum</p>
+              </div>
+              <span>15 menit yang lalu</span>
+            </div>
+
+            <div className="activity-item">
+              <div className="circle-icon yellow-soft">🛒</div>
+              <div>
+                <h3>Transaksi baru berhasil</h3>
+                <p>Salad Buah Segar</p>
+              </div>
+              <span>1 jam yang lalu</span>
+            </div>
+
+            <div className="activity-item">
+              <div className="circle-icon purple-soft">🏪</div>
+              <div>
+                <h3>Fresh Bowl bergabung sebagai penjual</h3>
+                <p>Selamat datang!</p>
+              </div>
+              <span>3 jam yang lalu</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="why-foodcycle">
+        <h2>🌿 Mengapa FoodCycle? 🌿</h2>
+
+        <div className="why-grid">
+          <div className="why-item">
+            <div className="why-icon">🍃</div>
+            <div>
+              <h3>Mengurangi Food Waste</h3>
+              <p>Bantu mengurangi limbah makanan yang masih layak konsumsi.</p>
+            </div>
+          </div>
+
+          <div className="why-item">
+            <div className="why-icon">🏷️</div>
+            <div>
+              <h3>Harga Lebih Terjangkau</h3>
+              <p>Dapatkan makanan berkualitas dengan harga lebih murah.</p>
+            </div>
+          </div>
+
+          <div className="why-item">
+            <div className="why-icon">♡</div>
+            <div>
+              <h3>Berdampak Positif</h3>
+              <p>Setiap pembelian membantu lingkungan dan sesama.</p>
+            </div>
+          </div>
+
+          <div className="why-item">
+            <div className="why-icon">🛡️</div>
+            <div>
+              <h3>Aman & Terpercaya</h3>
+              <p>Produk melalui proses seleksi untuk memastikan kualitas.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="home-cta">
+        <div>
+          <h2>Siap untuk berkontribusi?</h2>
+          <p>
+            Mulai beli makanan surplus berkualitas atau jual produk Anda
+            sekarang juga!
+          </p>
+        </div>
+
+        <div className="cta-buttons">
+          <Link className="button" to="/products">
+            🛒 Mulai Belanja
+          </Link>
+
+          <Link className="white-button" to="/add-product">
+            🏪 Jadi Penjual
+          </Link>
+        </div>
+      </section>
+    </main>
   );
 }
 
