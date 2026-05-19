@@ -13,9 +13,22 @@ function ProductDetail({ products }) {
     );
   }
 
+  const imageUrl =
+    product.image ||
+    product.image_url ||
+    "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800";
+
+  const price = Number(product.price || 0);
+
+  const originalPrice = Number(
+    product.original_price || product.originalPrice || product.price || 0
+  );
+
+  const expiredTime = product.expired_time || product.expiredTime || "-";
+
   return (
     <div className="page detail-layout">
-      <img className="detail-image" src={product.image} alt={product.name} />
+      <img className="detail-image" src={imageUrl} alt={product.name} />
 
       <div className="detail-content">
         <h1>{product.name}</h1>
@@ -31,15 +44,20 @@ function ProductDetail({ products }) {
           <strong>Stok:</strong> {product.quantity}
         </p>
         <p>
-          <strong>Kedaluwarsa:</strong> {product.expiredTime}
+          <strong>Batas konsumsi:</strong> {expiredTime}
         </p>
         <p>
           <strong>Status:</strong> {product.status}
         </p>
 
         <div className="price-row detail-price">
-          <strong>Rp{product.price.toLocaleString("id-ID")}</strong>
-          <span>Rp{product.originalPrice.toLocaleString("id-ID")}</span>
+          <span className="old-price">
+            Rp{originalPrice.toLocaleString("id-ID")}
+          </span>
+
+          <strong>
+            Rp{price.toLocaleString("id-ID")}
+          </strong>
         </div>
 
         <Link className="button" to={`/checkout/${product.id}`}>
