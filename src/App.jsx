@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
+import { supabase } from "./supabaseClient";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 
-import initialProducts from "./data/products";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import ProductList from "./pages/ProductList";
@@ -13,21 +13,43 @@ import SellerDashboard from "./pages/SellerDashboard";
 import EditProduct from "./pages/EditProduct";
 
 function App() {
-  const [products, setProducts] = useState(() => {
-    const savedProducts = localStorage.getItem("foodcycle-products");
-    return savedProducts ? JSON.parse(savedProducts) : initialProducts;
-  });
+  const [products, setProducts] = useState([]);
+
+  const fetchProducts = async () => {
+    const { data, error } = await supabase
+      .from("products")
+      .select("*")
+      .order("id", { ascending: false });
+
+    if (error) {
+      console.log("ERROR FETCH PRODUCTS:", error);
+      return;
+    }
+
+    setProducts(data);
+  };
 
   useEffect(() => {
-    localStorage.setItem("foodcycle-products", JSON.stringify(products));
-  }, [products]);
+    fetchProducts();
+  }, []);
 
   const addProduct = (newProduct) => {
     setProducts([newProduct, ...products]);
   };
 
-  const deleteProduct = (id) => {
-  setProducts(products.filter((product) => product.id !== id));
+  const deleteProduct = async (id) => {
+    const { error } = await supabase
+      .from("products")
+      .delete()
+      .eq("id", id);
+
+    if (error) {
+      console.log("ERROR DELETE PRODUCT:", error);
+      alert("Gagal menghapus produk dari Supabase.");
+      return;
+    }
+
+    setProducts(products.filter((product) => product.id !== id));
   };
 
   return (
