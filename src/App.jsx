@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { supabase } from "./supabaseClient";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
+import OrderList from "./pages/OrderList";
 
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
@@ -58,23 +59,44 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/products" element={<ProductList products={products} />} />
+
+        <Route
+          path="/products"
+          element={<ProductList products={products} />}
+        />
+
         <Route
           path="/products/:id"
           element={<ProductDetail products={products} />}
         />
+
         <Route
           path="/add-product"
           element={<AddProduct addProduct={addProduct} />}
         />
+
         <Route
           path="/edit-product/:id"
           element={<EditProduct />}
         />
-        <Route path="/checkout/:id" element={<Checkout products={products} />} />
+
+        <Route
+          path="/checkout/:id"
+          element={<Checkout products={products} />}
+        />
+
+        <Route
+          path="/orders"
+          element={<OrderList />}
+        />
+
         <Route
           path="/seller-dashboard"
-          element={<SellerDashboard products={products} deleteProduct={deleteProduct} />
+          element={
+            <SellerDashboard
+              products={products}
+              deleteProduct={deleteProduct}
+            />
           }
         />
       </Routes>
