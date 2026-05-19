@@ -1,4 +1,6 @@
+import { useNavigate } from "react-router-dom";
 function SellerDashboard({ products, deleteProduct }) {
+  const navigate = useNavigate();
   return (
     <div className="page">
       <h1>Dashboard Penjual</h1>
@@ -26,6 +28,13 @@ function SellerDashboard({ products, deleteProduct }) {
                 <td>{product.location}</td>
                 <td>{product.status}</td>
                 <td>
+                  <button
+                    className="button"
+                    onClick={() => navigate(`/edit-product/${product.id}`)}
+                  >
+                    Edit
+                  </button>
+                  
                   <button
                     className="delete-button"
                     onClick={() => deleteProduct(product.id)}
