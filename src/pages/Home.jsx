@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { supabase } from "../supabaseClient";
 
 function Home() {
+  const navigate = useNavigate();
   const [stats, setStats] = useState({
     totalProducts: 0,
     totalSellers: 0,
@@ -68,6 +69,13 @@ function Home() {
           </p>
 
           <div className="home-actions">
+            <button
+              className="button"
+              onClick={() => navigate(-1)}
+      >
+              ← Kembali
+            </button>
+
             <Link className="button" to="/products">
               🛍️ Lihat Produk
             </Link>
