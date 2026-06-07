@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { supabase } from "../supabaseClient";
+import BackButton from "../components/BackButton";
 
 function OrderList() {
   const [orders, setOrders] = useState([]);
@@ -23,6 +24,8 @@ function OrderList() {
   }, []);
 
   return (
+    <>
+    <BackButton />
     <div className="page">
       <div className="orders-header">
         <h1>Checkout / Pesanan</h1>
@@ -77,6 +80,7 @@ function OrderList() {
         </div>
       )}
     </div>
+    </>
   );
 }
 

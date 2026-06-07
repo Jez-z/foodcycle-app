@@ -1,9 +1,12 @@
 import { useNavigate } from "react-router-dom";
+import BackButton from "../components/BackButton";
 
 function SellerDashboard({ products, deleteProduct }) {
   const navigate = useNavigate();
 
   return (
+    <>
+      <BackButton />
     <div className="page">
       <h1>Dashboard Penjual</h1>
       <p>
@@ -52,6 +55,7 @@ function SellerDashboard({ products, deleteProduct }) {
         </table>
       </div>
     </div>
+    </>
   );
 }
 

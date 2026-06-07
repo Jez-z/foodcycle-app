@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { supabase } from "../supabaseClient";
+import BackButton from "../components/BackButton";
 
 function AddProduct({ addProduct }) {
   const [form, setForm] = useState({
@@ -95,7 +96,9 @@ function AddProduct({ addProduct }) {
   };
 
   return (
-    <div className="page">
+  <>
+    <BackButton />
+      <div className="page">
       <h1>Tambah Produk Surplus</h1>
       <p>Penjual dapat menambahkan makanan surplus yang masih layak konsumsi.</p>
 
@@ -171,6 +174,7 @@ function AddProduct({ addProduct }) {
         </button>
       </form>
     </div>
+    </>
   );
 }
 

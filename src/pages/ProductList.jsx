@@ -1,9 +1,12 @@
 import ProductCard from "../components/ProductCard";
+import BackButton from "../components/BackButton";
 
 function ProductList({ products }) {
   return (
-    <div className="page">
-      <h1>Daftar Makanan Surplus</h1>
+    <>
+      <BackButton />
+      <div className="page">
+        <h1>Daftar Makanan Surplus</h1>
       <p>Pilih makanan surplus yang tersedia di sekitar kamu.</p>
 
       <div className="product-grid">
@@ -12,6 +15,7 @@ function ProductList({ products }) {
         ))}
       </div>
     </div>
+    </>
   );
 }
 

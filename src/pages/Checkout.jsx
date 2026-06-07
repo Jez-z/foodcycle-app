@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { supabase } from "../supabaseClient";
+import BackButton from "../components/BackButton";
 
 function Checkout({ products }) {
   const { id } = useParams();
@@ -89,6 +90,8 @@ function Checkout({ products }) {
   };
 
   return (
+  <>
+    <BackButton />
     <div className="page checkout-page">
       <div className="checkout-header">
         <div>
@@ -193,6 +196,7 @@ function Checkout({ products }) {
         </div>
       </div>
     </div>
+    </>
   );
 }
 

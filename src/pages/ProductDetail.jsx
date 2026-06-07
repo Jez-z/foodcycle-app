@@ -1,4 +1,5 @@
 import { useParams, Link } from "react-router-dom";
+import BackButton from "../components/BackButton";
 
 function ProductDetail({ products }) {
   const { id } = useParams();
@@ -27,6 +28,8 @@ function ProductDetail({ products }) {
   const expiredTime = product.expired_time || product.expiredTime || "-";
 
   return (
+    <>
+    <BackButton />
     <div className="page detail-layout">
       <img className="detail-image" src={imageUrl} alt={product.name} />
 
@@ -65,6 +68,7 @@ function ProductDetail({ products }) {
         </Link>
       </div>
     </div>
+    </>
   );
 }
 
