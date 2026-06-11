@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { supabase } from "../supabaseClient";
 
-function Home() {
+function Home({ products = [] }) {
   const [stats, setStats] = useState({
     totalProducts: 0,
     totalSellers: 0,
@@ -181,39 +181,30 @@ function Home() {
           </div>
 
           <div className="latest-products">
-            <div className="mini-product">
-              <div className="mini-img img-1"></div>
-              <h3>Nasi Ayam Teriyaki</h3>
-              <p>Dapur Sehat</p>
-              <strong>Rp18.000</strong>
-              <span>Tersedia</span>
-            </div>
+  {products.slice(0, 4).map((product) => (
+    <div className="mini-product" key={product.id}>
+      <img
+        src={
+          product.image ||
+          product.image_url ||
+          "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800"
+        }
+        alt={product.name}
+        className="mini-product-image"
+      />
 
-            <div className="mini-product">
-              <div className="mini-img img-2"></div>
-              <h3>Roti Gandum</h3>
-              <p>Bakery Happy</p>
-              <strong>Rp12.000</strong>
-              <span>Tersedia</span>
-            </div>
+      <h3>{product.name}</h3>
+      <p>{product.seller}</p>
 
-            <div className="mini-product">
-              <div className="mini-img img-3"></div>
-              <h3>Salad Buah Segar</h3>
-              <p>Fresh Bowl</p>
-              <strong>Rp15.000</strong>
-              <span>Tersedia</span>
-            </div>
+      <strong>
+        Rp{Number(product.price).toLocaleString("id-ID")}
+      </strong>
 
-            <div className="mini-product">
-              <div className="mini-img img-4"></div>
-              <h3>Jus Jeruk Murni</h3>
-              <p>Healthy Drink</p>
-              <strong>Rp10.000</strong>
-              <span>Tersedia</span>
-            </div>
-          </div>
-        </div>
+      <span>Tersedia</span>
+    </div>
+  ))}
+</div>
+</div>
 
         <div className="dashboard-card">
           <div className="card-title-row">
