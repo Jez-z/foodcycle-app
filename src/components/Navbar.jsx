@@ -6,7 +6,7 @@ function Navbar() {
       <h2>FoodCycle</h2>
 
       <div className="nav-links">
-        <Link to="/home">
+        <Link to="/">
         Home
         </Link>
         <Link to="/products">Produk</Link>
