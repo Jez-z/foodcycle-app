@@ -1,8 +1,50 @@
-import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
 import BackButton from "../components/BackButton";
 
 function SellerDashboard({ products, deleteProduct }) {
   const navigate = useNavigate();
+  const [authorized, setAuthorized] = useState(false);
+  const [password, setPassword] = useState("");
+
+  if (!authorized) {
+  return (
+    <>
+      <BackButton />
+
+      <div className="page">
+        <h1>Akses Penjual</h1>
+
+        <p>
+          Masukkan password untuk mengakses dashboard penjual.
+        </p>
+
+        <input
+          type="password"
+          placeholder="Password Penjual"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+
+        <br />
+        <br />
+
+        <button
+          className="button"
+          onClick={() => {
+            if (password === "foodcycle123") {
+              setAuthorized(true);
+            } else {
+              alert("Password salah!");
+            }
+          }}
+        >
+          Masuk Dashboard
+        </button>
+      </div>
+    </>
+  );
+}
 
   return (
     <>
@@ -12,6 +54,12 @@ function SellerDashboard({ products, deleteProduct }) {
       <p>
         Halaman ini digunakan penjual untuk memantau dan mengelola produk yang tersedia.
       </p>
+
+      <div style={{ marginBottom: "20px" }}>
+        <Link to="/add-product" className="button">
+          + Tambah Produk
+        </Link>
+      </div>
 
       <div className="table-wrapper">
         <table>

@@ -201,10 +201,10 @@ function Home({ products = [] }) {
           </div>
 
           <div className="latest-products">
-  {products.slice(0, 4).map((product) => (
-    <div className="mini-product" key={product.id}>
-      <img
-        src={
+            {products.slice(0, 4).map((product) => (
+              <div className="mini-product" key={product.id}>
+          <img
+           src={
           product.image ||
           product.image_url ||
           "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800"
@@ -324,7 +324,7 @@ function Home({ products = [] }) {
             🛒 Mulai Belanja
           </Link>
 
-          <Link className="white-button" to="/add-product">
+          <Link className="white-button" to="/seller-dashboard">
             🏪 Jadi Penjual
           </Link>
         </div>
