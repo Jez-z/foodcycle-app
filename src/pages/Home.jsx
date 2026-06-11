@@ -136,7 +136,7 @@ function Home() {
               <div className="circle-icon green-soft">🍱</div>
               <div>
                 <h3>Makanan Siap Saji</h3>
-                <p>45 Produk</p>
+                <p>4 Produk</p>
               </div>
             </div>
 
@@ -144,7 +144,7 @@ function Home() {
               <div className="circle-icon yellow-soft">🥐</div>
               <div>
                 <h3>Roti & Bakery</h3>
-                <p>28 Produk</p>
+                <p>2 Produk</p>
               </div>
             </div>
 
@@ -152,7 +152,7 @@ function Home() {
               <div className="circle-icon orange-soft">🍊</div>
               <div>
                 <h3>Buah & Sayur</h3>
-                <p>32 Produk</p>
+                <p>2 Produk</p>
               </div>
             </div>
 
@@ -160,7 +160,7 @@ function Home() {
               <div className="circle-icon purple-soft">🥤</div>
               <div>
                 <h3>Minuman</h3>
-                <p>23 Produk</p>
+                <p>2 Produk</p>
               </div>
             </div>
 
@@ -168,7 +168,7 @@ function Home() {
               <div className="circle-icon blue-soft">❄️</div>
               <div>
                 <h3>Frozen Food</h3>
-                <p>18 Produk</p>
+                <p>0 Produk</p>
               </div>
             </div>
           </div>
