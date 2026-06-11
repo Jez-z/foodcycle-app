@@ -10,6 +10,26 @@ function Home({ products = [] }) {
     totalTransactions: 0,
   });
 
+  const readyFood = products.filter(
+    (p) => p.category === "Makanan Siap Saji"
+  ).length;
+
+  const bakery = products.filter(
+    (p) => p.category === "Roti & Bakery"
+  ).length;
+
+  const fruits = products.filter(
+    (p) => p.category === "Buah & Sayur"
+  ).length;
+
+  const drinks = products.filter(
+    (p) => p.category === "Minuman"
+  ).length;
+
+  const frozenFood = products.filter(
+    (p) => p.category === "Frozen Food"
+  ).length;
+
   const fetchStats = async () => {
     const { data: products, error: productError } = await supabase
       .from("products")
@@ -136,7 +156,7 @@ function Home({ products = [] }) {
               <div className="circle-icon green-soft">🍱</div>
               <div>
                 <h3>Makanan Siap Saji</h3>
-                <p>4 Produk</p>
+                <p>{readyFood} Produk</p>
               </div>
             </div>
 
@@ -144,7 +164,7 @@ function Home({ products = [] }) {
               <div className="circle-icon yellow-soft">🥐</div>
               <div>
                 <h3>Roti & Bakery</h3>
-                <p>2 Produk</p>
+                <p>{bakery} Produk</p>
               </div>
             </div>
 
@@ -152,7 +172,7 @@ function Home({ products = [] }) {
               <div className="circle-icon orange-soft">🍊</div>
               <div>
                 <h3>Buah & Sayur</h3>
-                <p>2 Produk</p>
+                <p>{fruits} Produk</p>
               </div>
             </div>
 
@@ -160,7 +180,7 @@ function Home({ products = [] }) {
               <div className="circle-icon purple-soft">🥤</div>
               <div>
                 <h3>Minuman</h3>
-                <p>2 Produk</p>
+                <p>{drinks} Produk</p>
               </div>
             </div>
 
@@ -168,7 +188,7 @@ function Home({ products = [] }) {
               <div className="circle-icon blue-soft">❄️</div>
               <div>
                 <h3>Frozen Food</h3>
-                <p>0 Produk</p>
+                <p>{frozenFood} Produk</p>
               </div>
             </div>
           </div>

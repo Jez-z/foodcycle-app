@@ -4,16 +4,17 @@ import BackButton from "../components/BackButton";
 
 function AddProduct({ addProduct }) {
   const [form, setForm] = useState({
-    name: "",
-    seller: "",
-    price: "",
-    originalPrice: "",
-    quantity: "",
-    location: "",
-    expiredTime: "",
-    description: "",
-    image: "",
-  });
+  name: "",
+  seller: "",
+  category: "",
+  price: "",
+  originalPrice: "",
+  quantity: "",
+  location: "",
+  expiredTime: "",
+  description: "",
+  image: "",
+});
 
   const handleChange = (e) => {
     setForm({
@@ -28,6 +29,7 @@ function AddProduct({ addProduct }) {
     if (
       !form.name ||
       !form.seller ||
+      !form.category ||
       !form.price ||
       !form.quantity ||
       !form.location ||
@@ -55,6 +57,7 @@ function AddProduct({ addProduct }) {
     const newProduct = {
       name: form.name,
       seller: form.seller,
+      category: form.category,
       price: Number(form.price),
       original_price: Number(form.originalPrice || form.price),
       quantity: Number(form.quantity),
@@ -85,6 +88,7 @@ function AddProduct({ addProduct }) {
     setForm({
       name: "",
       seller: "",
+      category: "",
       price: "",
       originalPrice: "",
       quantity: "",
@@ -116,6 +120,19 @@ function AddProduct({ addProduct }) {
           value={form.seller}
           onChange={handleChange}
         />
+
+        <select
+          name="category"
+          value={form.category}
+          onChange={handleChange}
+        >
+          <option value="">Pilih Kategori</option>
+          <option value="Makanan Siap Saji">Makanan Siap Saji</option>
+          <option value="Roti & Bakery">Roti & Bakery</option>
+          <option value="Buah & Sayur">Buah & Sayur</option>
+          <option value="Minuman">Minuman</option>
+          <option value="Frozen Food">Frozen Food</option>
+        </select>
 
         <input
           name="price"
