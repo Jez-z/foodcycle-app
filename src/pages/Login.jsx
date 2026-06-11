@@ -27,12 +27,13 @@ function Login() {
 };
 
   const handleGoogleLogin = async () => {
-  const { error } = await supabase.auth.signInWithOAuth({
+  await supabase.auth.signInWithOAuth({
     provider: "google",
     options: {
-      redirectTo: "foodcycle-app.vercel.app",
+      redirectTo: window.location.origin,
     },
   });
+};
 
   if (error) {
     setMessage("Google Login gagal: " + error.message);
