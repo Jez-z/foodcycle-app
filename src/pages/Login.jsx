@@ -11,31 +11,57 @@ function Login() {
   const [loading, setLoading] = useState(false);
 
   const handleLogin = async (e) => {
-    e.preventDefault();
-    setMessage("");
-    setLoading(true);
+  e.preventDefault();
 
-    const { error } = await supabase.auth.signInWithPassword({
-      email,
-      password,
-    });
+  const { error } = await supabase.auth.signInWithPassword({
+    email,
+    password,
+  });
 
-    setLoading(false);
+  if (error) {
+    setMessage("Login gagal: " + error.message);
+    return;
+  }
 
-    if (error) {
-      setMessage("Login gagal: " + error.message);
-      return;
-    }
+  navigate("/home");
+};
 
-    setMessage("Login berhasil!");
-    navigate("/");
-  };
+  const handleGoogleLogin = async () => {
+  const { error } = await supabase.auth.signInWithOAuth({
+    provider: "google",
+    options: {
+      redirectTo: "https://foodcycle-app.vercel.app/home",
+    },
+  });
+
+  if (error) {
+    setMessage("Google Login gagal: " + error.message);
+  }
+};
 
   return (
     <main className="auth-page">
       <section className="auth-card">
         <h1>Login</h1>
         <p>Masuk ke akun FoodCycle kamu.</p>
+
+        <button
+
+  onClick={handleGoogleLogin}
+  style={{
+    width: "100%",
+    padding: "12px",
+    marginBottom: "16px",
+    borderRadius: "8px",
+    border: "1px solid #ddd",
+    cursor: "pointer",
+    background: "#fff",
+    color: "#333",
+    fontWeight: "600",
+  }}
+>
+  🔵 Continue with Google
+</button>
 
         <form onSubmit={handleLogin} className="auth-form">
           <label>Email</label>
