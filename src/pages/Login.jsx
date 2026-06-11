@@ -30,7 +30,7 @@ function Login() {
   const { error } = await supabase.auth.signInWithOAuth({
     provider: "google",
     options: {
-      redirectTo: "https://foodcycle-app.vercel.app/home",
+      redirectTo: "foodcycle-app.vercel.app",
     },
   });
 
