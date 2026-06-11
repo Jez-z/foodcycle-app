@@ -766,6 +766,18 @@ th {
   gap: 16px;
 }
 
+.mini-product {
+  overflow: hidden;
+}
+
+.mini-product-image {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 14px;
+  display: block;
+}
+
 .mini-product h3 {
   margin: 10px 0 4px;
   font-size: 15px;
